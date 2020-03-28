@@ -64,6 +64,7 @@ RUN set -x; \
         && rm -rf /var/lib/apt/lists/* odoo.deb
 
 # Copy entrypoint script and Odoo configuration file
+RUN pip3 install num2words xlwt unidecode pysftp==0.2.8 polib==1.1.0
 COPY ./entrypoint.sh /
 COPY ./odoo.conf /etc/odoo/
 
